@@ -5,9 +5,9 @@
 
 ## Project Overview
 
-This project builds a simple ETL (Extract, Transform, Load) pipeline in Python that retrieves real-time weather data for three cities — Mombasa, Nairobi, and London — using the OpenWeather API. The pipeline extracts raw weather data, transforms it into a clean, structured format, and loads it into a CSV file ready for analysis. A short comparative analysis of the three cities is also included.
+This project builds a simple ETL (Extract, Transform, Load) pipeline in Python that retrieves real-time weather data for three cities: Mombasa, Nairobi, and London using the OpenWeather API. The pipeline extracts raw weather data, transforms it into a clean, structured format, and loads it into a CSV file ready for analysis. A short comparative analysis of the three cities is also included.
 
-The goal of this project is to understand how organizations automatically collect and prepare data from external sources (like APIs) before it can be analyzed — a core skill for any data analyst working with live or frequently updated data.
+The goal of this project is to understand how organizations automatically collect and prepare data from external sources (like APIs) before it can be analyzed a core skill for any data analyst working with live or frequently updated data.
 
 ## Data Source
 
@@ -42,10 +42,10 @@ A custom function (`extract_weather_fields`) pulls the relevant fields out of th
 - Wind speed (m/s)
 - Date and time of reading
 
-The three city dictionaries are combined into a single pandas DataFrame. The API's Unix timestamp (`dt` field) was converted into a readable datetime, and split into separate **UTC** and **East Africa Time (EAT, UTC+3)** columns, since OpenWeather returns timestamps in UTC by default — this avoids confusion when comparing cities across time zones.
+The three city dictionaries are combined into a single pandas DataFrame. The API's Unix timestamp (`dt` field) was converted into a readable datetime, and split into separate **UTC** and **East Africa Time (EAT, UTC+3)** columns, since OpenWeather returns timestamps in UTC by default.This avoids confusion when comparing cities across time zones.
 
 ### 3. Load
-The final cleaned DataFrame is saved as a CSV file (`weather_data.csv`) for further analysis and reproducibility.
+The final cleaned DataFrame is saved as a CSV file (`weather_data.csv`) in data folder for further analysis and reproducibility.
 
 ## Tools Used
 
@@ -72,11 +72,11 @@ At the time of sampling, **Mombasa recorded the highest temperature (27°C)**, w
 
 Humidity told a different story than temperature: **London actually had the highest humidity (67%)**, ahead of Mombasa (60%), with Nairobi the driest at 40%. Combining temperature and humidity, **Mombasa emerged as the least comfortable city** overall, since its heat and humidity compound each other, while **Nairobi was the most comfortable**, benefiting from a moderate temperature and the lowest humidity of the three.
 
-Worth noting: **London has been experiencing an unusual heatwave** in recent conditions, which makes its relatively high humidity (67%) and mild 22°C reading notable in context — London's typical July weather is usually cooler and drier, so this snapshot reflects broader unusual heat patterns affecting the UK this summer rather than typical conditions.
+Worth noting: **London has been experiencing an unusual heatwave** in recent conditions, which makes its relatively high humidity (67%) and mild 22°C reading notable in context  London's typical July weather is usually cooler and drier, so this snapshot reflects broader unusual heat patterns affecting the UK this summer rather than typical conditions.
 
-In terms of wind, **Mombasa was the windiest city (7.33 m/s)**, while **London was the calmest (2.24 m/s)** — over three times less windy than Mombasa, consistent with Mombasa's coastal exposure.
+In terms of wind, **Mombasa was the windiest city (7.33 m/s)**, while **London was the calmest (2.24 m/s)** over three times less windy than Mombasa, consistent with Mombasa's coastal exposure.
 
-All three cities were experiencing cloudy conditions at the time of sampling, though the degree of cloud cover differed — Mombasa had "few clouds," Nairobi was "overcast," and London had "broken clouds" — showing that even cities sharing the same broad weather category can have meaningfully different conditions underneath.
+All three cities were experiencing cloudy conditions at the time of sampling, though the degree of cloud cover differed — Mombasa had "few clouds," Nairobi was "overcast," and London had "broken clouds" showing that even cities sharing the same broad weather category can have meaningfully different conditions underneath.
 
 ## Notes on Real-Time Data
 
